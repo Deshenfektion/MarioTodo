@@ -11,6 +11,8 @@ export const metadata: Metadata = {
   description: "Todo List with Mario UI from Hyperplexity",
   icons: {
     icon: "/mario-hat.png",
+    shortcut: "/mario-hat.png",
+    apple: "/mario-hat.png",
   },
 };
 
