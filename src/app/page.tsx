@@ -8,8 +8,6 @@ export default function Page() {
     <>
       {/* Whole page */}
       <div className="flex flex-col min-h-screen">
-        {/* Navbar */}
-        <Navbar></Navbar>
         {/* Title Section */}
         <main className="flex-grow">
           <div className="flex justify-center p-3">

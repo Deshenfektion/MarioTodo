@@ -1,12 +1,7 @@
-export type User = {
-  id: string;
-  name: string;
-  email: string;
-  password: string;
-};
-
 export type Task = {
   id: string;
+  userId: string;
   name: string;
   done: boolean;
+  createdAt: Date;
 };
