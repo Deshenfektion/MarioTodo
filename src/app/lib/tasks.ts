@@ -15,12 +15,15 @@ export async function createTask(
         status: "open",
       },
     ])
-    .single(); // Gibt nur ein Task zurück, statt ein Array
+    .select("*") // Verwende .select("*"), um das neu erstellte Objekt zurückzubekommen
+    .single(); // Falls du nur ein Element erwartest
 
   if (error) {
+    console.error("Error inserting task:", error); // Genauere Fehlerbehandlung
     throw new Error(error.message);
   }
 
+  console.log("Task created:", data); // Debugging: Ausgabe des erstellten Tasks
   return data;
 }
 

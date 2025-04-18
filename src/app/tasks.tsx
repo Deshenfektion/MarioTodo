@@ -1,8 +1,6 @@
-"use client";
-
 import { useEffect, useState } from "react";
 import { supabase } from "./lib/supabaseClient";
-import { getTasks, createTask, updateTask, deleteTask } from "./lib/tasks";
+import { getTasks, createTask, updateTask, deleteTask } from "./lib/tasks"; // Importiere alle Funktionen
 import "./tasks.css";
 
 export default function TasksPage() {
@@ -10,7 +8,6 @@ export default function TasksPage() {
   const [newTask, setNewTask] = useState({ title: "", description: "" });
   const [user, setUser] = useState<any>(null);
 
-  // User laden
   useEffect(() => {
     const loadUser = async () => {
       const {
@@ -19,47 +16,75 @@ export default function TasksPage() {
       setUser(user);
 
       if (user) {
-        loadTasks(user.id);
+        loadTasks(user.id); // Lade Aufgaben, wenn der User existiert
       } else {
-        window.location.href = "/login"; // Weiterleitung zur Login-Seite, falls nicht eingeloggt
+        window.location.href = "/login"; // Weiterleitung zur Login-Seite
       }
     };
 
     loadUser();
   }, []);
 
-  // Tasks laden
+  // Sicherstellen, dass tasks nie null oder undefined ist
   const loadTasks = async (userId: string) => {
     const tasks = await getTasks(userId);
-    setTasks(tasks);
+    setTasks(tasks || []); // Falls tasks null ist, setze ein leeres Array
   };
 
   // Neue Aufgabe erstellen
   const handleCreateTask = async () => {
-    if (user) {
-      const newTaskData = await createTask(
-        user.id,
-        newTask.title,
-        newTask.description
-      );
-      setTasks([newTaskData, ...tasks]); // Füge die neue Aufgabe hinzu
-      setNewTask({ title: "", description: "" }); // Zurücksetzen des Eingabefeldes
+    if (user && newTask.title) {
+      try {
+        const newTaskData = await createTask(
+          user.id,
+          newTask.title,
+          newTask.description
+        );
+
+        console.log("New task created:", newTaskData); // Debugging: Zeige die Rückgabe von createTask an
+
+        if (newTaskData) {
+          setTasks([newTaskData, ...tasks]); // Füge die neue Aufgabe an den Anfang der Liste hinzu
+          setNewTask({ title: "", description: "" }); // Setze die Eingabefelder zurück
+        } else {
+          console.error("No task data returned from createTask");
+          alert("Failed to create task. Please try again.");
+        }
+      } catch (error) {
+        console.error("Error creating task:", error);
+        alert("An error occurred while creating the task. Please try again.");
+      }
+    } else {
+      console.error("Please fill out the title");
+      alert("Please fill out the title.");
     }
   };
 
-  // Aufgabe aktualisieren (Status ändern)
+  // Aufgabe aktualisieren
   const handleUpdateTask = async (taskId: number, status: string) => {
     if (user) {
-      const updatedTask = await updateTask(taskId, "", "", status);
-      setTasks(tasks.map((task) => (task.id === taskId ? updatedTask : task))); // Aufgabe im State aktualisieren
+      try {
+        const updatedTask = await updateTask(taskId, status); // Nur den Status aktualisieren
+        setTasks(
+          tasks.map((task) => (task.id === taskId ? updatedTask : task))
+        );
+      } catch (error) {
+        console.error("Error updating task:", error);
+        alert("Failed to update task. Please try again.");
+      }
     }
   };
 
   // Aufgabe löschen
   const handleDeleteTask = async (taskId: number) => {
     if (user) {
-      await deleteTask(taskId);
-      setTasks(tasks.filter((task) => task.id !== taskId)); // Aufgabe aus der Liste entfernen
+      try {
+        await deleteTask(taskId);
+        setTasks(tasks.filter((task) => task.id !== taskId));
+      } catch (error) {
+        console.error("Error deleting task:", error);
+        alert("Failed to delete task. Please try again.");
+      }
     }
   };
 
@@ -83,17 +108,26 @@ export default function TasksPage() {
         <button onClick={handleCreateTask}>Create Task</button>
       </div>
       <ul>
-        {tasks.map((task) => (
-          <li key={task.id}>
-            <h2>{task.title}</h2>
-            <p>{task.description}</p>
-            <p>Status: {task.status}</p>
-            <button onClick={() => handleUpdateTask(task.id, "completed")}>
-              Mark as completed
-            </button>
-            <button onClick={() => handleDeleteTask(task.id)}>Delete</button>
-          </li>
-        ))}
+        {tasks && tasks.length > 0 ? (
+          tasks.map((task) => {
+            if (!task) return null; // Ungültige Aufgaben überspringen
+            return (
+              <li key={task.id}>
+                <h2>{task.title}</h2>
+                <p>{task.description}</p>
+                <p>Status: {task.status}</p>
+                <button onClick={() => handleUpdateTask(task.id, "completed")}>
+                  Mark as completed
+                </button>
+                <button onClick={() => handleDeleteTask(task.id)}>
+                  Delete
+                </button>
+              </li>
+            );
+          })
+        ) : (
+          <p>No tasks available.</p> // Falls keine Aufgaben vorhanden sind
+        )}
       </ul>
     </div>
   );
