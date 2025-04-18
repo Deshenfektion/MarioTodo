@@ -26,14 +26,6 @@ export default function Page() {
         </main>
 
         {/* Footer for icon credits */}
-        <div className="text-xs text-center p-2">
-          <a
-            href="https://www.flaticon.com/free-icons/to-do"
-            title="to do icons"
-          >
-            To do icons created by Freepik - Flaticon
-          </a>
-        </div>
       </div>
     </>
   );
