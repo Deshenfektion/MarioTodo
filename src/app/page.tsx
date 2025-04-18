@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 import { supabase } from "./lib/supabaseClient"; // Dein Supabase-Client
-import TasksPage from "./tasks";
+import TasksView from "./tasks/TasksView";
 
 export default function Page() {
   useEffect(() => {
@@ -34,7 +34,7 @@ export default function Page() {
             />
           </div>
           {/* Insert tasks from user here */}
-          <TasksPage />
+          <TasksView />
         </main>
 
         {/* Footer for icon credits */}

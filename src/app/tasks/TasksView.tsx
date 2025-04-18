@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import { supabase } from "./lib/supabaseClient";
-import { getTasks, createTask, updateTask, deleteTask } from "./lib/tasks"; // Importiere alle Funktionen
+import { supabase } from "../lib/supabaseClient";
+import { getTasks, createTask, updateTask, deleteTask } from "../lib/tasks"; // Importiere alle Funktionen
 import "./tasks.css";
 
-export default function TasksPage() {
+export default function TasksView() {
   const [tasks, setTasks] = useState<any[]>([]);
   const [newTask, setNewTask] = useState({ title: "", description: "" });
   const [user, setUser] = useState<any>(null);
@@ -89,9 +89,9 @@ export default function TasksPage() {
   };
 
   return (
-    <div className="tasks-container">
-      <h1>Your Tasks</h1>
-      <div className="new-task">
+    <div className="tasksContainer">
+      <h1 className="tasksTitle">Your Tasks</h1>
+      <div className="newTask">
         <input
           type="text"
           placeholder="Task Title"
@@ -107,12 +107,12 @@ export default function TasksPage() {
         />
         <button onClick={handleCreateTask}>Create Task</button>
       </div>
-      <ul>
+      <ul className="taskList">
         {tasks && tasks.length > 0 ? (
           tasks.map((task) => {
-            if (!task || task.status != "open") return null; // Ungültige und erledigte Aufgaben überspringen
+            if (!task || task.status != "open") return null;
             return (
-              <li key={task.id}>
+              <li key={task.id} className="taskItem">
                 <h2>{task.title}</h2>
                 <p>{task.description}</p>
                 <p>Status: {task.status}</p>
@@ -126,7 +126,7 @@ export default function TasksPage() {
             );
           })
         ) : (
-          <p>No tasks available.</p> // Falls keine Aufgaben vorhanden sind
+          <p>No tasks available.</p>
         )}
       </ul>
     </div>
