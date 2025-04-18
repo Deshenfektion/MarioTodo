@@ -24,16 +24,20 @@ export default function Page() {
       <div className="flex flex-col min-h-screen">
         {/* Title Section */}
         <main className="flex-grow">
-          <div className="flex justify-center p-3">
-            <h1 className="font-extrabold text-center m-1.5">To-Do List</h1>
+          <div className="flex justify-center p-3 gap-2">
             <Image
-              src="/favicon.png"
+              src="/mario-todo-title.png"
+              width={285}
+              height={49}
+              alt="Title"
+            />
+            <Image
+              src="/mario-hat.png"
               width={50}
               height={50}
               alt="To-Do List Logo"
             />
           </div>
-          {/* Insert tasks from user here */}
           <TasksView />
         </main>
 

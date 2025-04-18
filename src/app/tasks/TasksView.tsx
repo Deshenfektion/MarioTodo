@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
 import { getTasks, createTask, updateTask, deleteTask } from "../lib/tasks"; // Importiere alle Funktionen
 import "./tasks.css";
+import Image from "next/image";
 
 export default function TasksView() {
   const [tasks, setTasks] = useState<any[]>([]);
@@ -90,7 +91,13 @@ export default function TasksView() {
 
   return (
     <div className="tasksContainer">
-      <h1 className="tasksTitle">Your Tasks</h1>
+      <Image
+        className="mb-3"
+        src="/your-tasks-header.png"
+        width={143}
+        height={25}
+        alt="Colorful header"
+      />
       <div className="newTask">
         <input
           type="text"
@@ -115,7 +122,6 @@ export default function TasksView() {
               <li key={task.id} className="taskItem">
                 <h2>{task.title}</h2>
                 <p>{task.description}</p>
-                <p>Status: {task.status}</p>
                 <button onClick={() => handleUpdateTask(task.id, "completed")}>
                   Mark as completed
                 </button>
