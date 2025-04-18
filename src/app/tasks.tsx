@@ -110,7 +110,7 @@ export default function TasksPage() {
       <ul>
         {tasks && tasks.length > 0 ? (
           tasks.map((task) => {
-            if (!task) return null; // Ungültige Aufgaben überspringen
+            if (!task || task.status != "open") return null; // Ungültige und erledigte Aufgaben überspringen
             return (
               <li key={task.id}>
                 <h2>{task.title}</h2>

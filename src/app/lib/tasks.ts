@@ -27,17 +27,15 @@ export async function createTask(
   return data;
 }
 
-export async function updateTask(
-  taskId: number,
-  title: string,
-  description: string,
-  status: string
-) {
+export async function updateTask(taskId: number, status: string) {
+  const updates: any = { updated_at: new Date() };
+  if (status !== undefined) updates.status = status;
+
   const { data, error } = await supabase
     .from("tasks")
-    .update({ title, description, status, updated_at: new Date() })
+    .update(updates)
     .eq("id", taskId)
-    .single(); // Nur einen Task zurückgeben
+    .single();
 
   if (error) {
     throw new Error(error.message);
