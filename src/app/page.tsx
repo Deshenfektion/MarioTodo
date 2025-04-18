@@ -1,12 +1,26 @@
+"use client";
+
+import { useEffect } from "react";
 import Image from "next/image";
-import Link from "next/link";
-import Navbar from "./ui/navbar";
 import Task from "./ui/task";
+import { supabase } from "./lib/supabaseClient"; // Dein Supabase-Client
 
 export default function Page() {
+  useEffect(() => {
+    const checkUser = async () => {
+      const {
+        data: { user },
+      } = await supabase.auth.getUser();
+      if (!user) {
+        window.location.href = "/login"; // Weiterleitung zur Login-Seite, wenn der Benutzer nicht eingeloggt ist
+      }
+    };
+
+    checkUser();
+  }, []);
+
   return (
     <>
-      {/* Whole page */}
       <div className="flex flex-col min-h-screen">
         {/* Title Section */}
         <main className="flex-grow">
@@ -20,9 +34,9 @@ export default function Page() {
             />
           </div>
           {/* Static dummy tasks */}
-          <Task></Task>
-          <Task></Task>
-          <Task></Task>
+          <Task />
+          <Task />
+          <Task />
         </main>
 
         {/* Footer for icon credits */}
