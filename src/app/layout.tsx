@@ -7,8 +7,8 @@ import Link from "next/link";
 import MarioBackground from "./ui/mario-background/mario-background";
 
 export const metadata: Metadata = {
-  title: "MyTodo",
-  description: "Simple To-Do List with Next.js and Supabase",
+  title: "MarioTodo",
+  description: "Todo List with Mario UI from Hyperplexity",
   icons: {
     icon: "/favicon.png",
   },
@@ -23,7 +23,9 @@ export default function RootLayout({
     <>
       <html lang="en">
         <body className={`${oswald.className} text-4xl antialiased`}>
-          <MarioBackground />
+          <div id="MarioBackground">
+            <MarioBackground />
+          </div>
           {children}
         </body>
       </html>
