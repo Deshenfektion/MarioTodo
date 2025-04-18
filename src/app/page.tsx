@@ -2,8 +2,8 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import Task from "./ui/task";
 import { supabase } from "./lib/supabaseClient"; // Dein Supabase-Client
+import TasksPage from "./tasks";
 
 export default function Page() {
   useEffect(() => {
@@ -33,10 +33,8 @@ export default function Page() {
               alt="To-Do List Logo"
             />
           </div>
-          {/* Static dummy tasks */}
-          <Task />
-          <Task />
-          <Task />
+          {/* Insert tasks from user here */}
+          <TasksPage />
         </main>
 
         {/* Footer for icon credits */}
