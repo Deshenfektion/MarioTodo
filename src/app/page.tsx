@@ -31,17 +31,9 @@ export default function Page() {
               height={49}
               alt="Title"
             />
-            <Image
-              src="/mario-hat.png"
-              width={50}
-              height={50}
-              alt="To-Do List Logo"
-            />
           </div>
           <TasksView />
         </main>
-
-        {/* Footer for icon credits */}
       </div>
     </>
   );
