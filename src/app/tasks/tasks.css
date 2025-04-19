@@ -167,8 +167,12 @@
 }
 
 .taskItem h2 {
-  font-size: 18px;
-  margin: 0 0 0.5rem 0;
+  font-size: x-large;
+  background-color: #444;
+  padding: 0.4rem 0.8rem;
+  border-left: 4px solid #f9b533;
+  border-radius: 4px;
+  display: inline-block;
 }
 
 .taskItem p {
