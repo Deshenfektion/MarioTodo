@@ -24,7 +24,7 @@ export default function RootLayout({
   return (
     <>
       <html lang="en">
-        <body className={`${oswald.className} text-4xl antialiased`}>
+        <body className="text-4xl">
           <div id="MarioBackground">
             <MarioBackground />
           </div>

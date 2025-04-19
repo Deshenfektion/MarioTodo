@@ -112,7 +112,13 @@ export default function TasksView() {
             setNewTask({ ...newTask, description: e.target.value })
           }
         />
-        <button onClick={handleCreateTask}>Create Task</button>
+        <div className="flex justify-center">
+          <button className="modal-action" onClick={handleCreateTask}>
+            <div className="modal-action-fade" />
+            <div className="modal-action-pattern" />
+            <div className="modal-action-text">Create Task</div>
+          </button>{" "}
+        </div>
       </div>
       <ul className="taskList">
         {tasks && tasks.length > 0 ? (
