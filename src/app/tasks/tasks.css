@@ -1,5 +1,4 @@
-/* Animated Create Task button styles */
-
+/* Animated 'Create Task' button styles */
 .modal-action {
   background-color: white;
   width: 97.5%; /* Füllt den verfügbaren Platz der Parent-Komponente */
@@ -99,7 +98,7 @@
   align-items: center;
   width: 70%;
   max-width: 800px;
-  margin: 0 auto;
+  margin: auto;
   padding: 1rem;
   background-color: #222;
   border-radius: 10px;
@@ -127,7 +126,7 @@
   padding: 0.5rem 1rem;
   border: none;
   border-radius: 8px;
-  background-color: #f9b533;
+  background-color: white;
   color: black;
   font-weight: bold;
   cursor: pointer;

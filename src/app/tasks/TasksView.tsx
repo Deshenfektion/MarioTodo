@@ -90,57 +90,63 @@ export default function TasksView() {
   };
 
   return (
-    <div className="tasksContainer">
-      <Image
-        className="mb-3"
-        src="/your-tasks-header.png"
-        width={143}
-        height={25}
-        alt="Colorful header"
-      />
-      <div className="newTask">
-        <input
-          type="text"
-          placeholder="Task Title"
-          value={newTask.title}
-          onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
+    <main className="flex flex-col gap-5">
+      <div className="tasksContainer">
+        <Image
+          className="mb-3"
+          src="/your-tasks-header.png"
+          width={143}
+          height={25}
+          alt="Colorful header"
         />
-        <textarea
-          placeholder="Task Description"
-          value={newTask.description}
-          onChange={(e) =>
-            setNewTask({ ...newTask, description: e.target.value })
-          }
-        />
-        <div className="flex justify-center">
-          <button className="modal-action" onClick={handleCreateTask}>
-            <div className="modal-action-fade" />
-            <div className="modal-action-pattern" />
-            <div className="modal-action-text">Create Task</div>
-          </button>{" "}
+        <div className="newTask">
+          <input
+            type="text"
+            placeholder="Task Title"
+            value={newTask.title}
+            onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
+          />
+          <textarea
+            placeholder="Task Description"
+            value={newTask.description}
+            onChange={(e) =>
+              setNewTask({ ...newTask, description: e.target.value })
+            }
+          />
+          <div className="flex justify-center">
+            <button className="modal-action" onClick={handleCreateTask}>
+              <div className="modal-action-fade" />
+              <div className="modal-action-pattern" />
+              <div className="modal-action-text">Create Task</div>
+            </button>{" "}
+          </div>
         </div>
       </div>
-      <ul className="taskList">
-        {tasks && tasks.length > 0 ? (
-          tasks.map((task) => {
-            if (!task || task.status != "open") return null;
-            return (
-              <li key={task.id} className="taskItem">
-                <h2>{task.title}</h2>
-                <p>{task.description}</p>
-                <button onClick={() => handleUpdateTask(task.id, "completed")}>
-                  Mark as completed
-                </button>
-                <button onClick={() => handleDeleteTask(task.id)}>
-                  Delete
-                </button>
-              </li>
-            );
-          })
-        ) : (
-          <p>No tasks available.</p>
-        )}
-      </ul>
-    </div>
+      <div className="tasksContainer">
+        <ul className="taskList">
+          {tasks && tasks.length > 0 ? (
+            tasks.map((task) => {
+              if (!task || task.status != "open") return null;
+              return (
+                <li key={task.id} className="taskItem">
+                  <h2>{task.title}</h2>
+                  <p>{task.description}</p>
+                  <button
+                    onClick={() => handleUpdateTask(task.id, "completed")}
+                  >
+                    Mark as completed
+                  </button>
+                  <button onClick={() => handleDeleteTask(task.id)}>
+                    Delete
+                  </button>
+                </li>
+              );
+            })
+          ) : (
+            <p>No tasks available.</p>
+          )}
+        </ul>
+      </div>
+    </main>
   );
 }
