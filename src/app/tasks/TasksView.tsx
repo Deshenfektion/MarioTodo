@@ -113,7 +113,7 @@ export default function TasksView() {
               setNewTask({ ...newTask, description: e.target.value })
             }
           />
-          <div className="flex justify-center">
+          <div className="flex justify-center mt-4">
             <button className="modal-action" onClick={handleCreateTask}>
               <div className="modal-action-fade" />
               <div className="modal-action-pattern" />
@@ -124,7 +124,7 @@ export default function TasksView() {
       </div>
       <div className="tasksContainer">
         <Image
-          className="mb-3"
+          className="mb-2"
           src="/your-tasks-header.png"
           width={143}
           height={25}
