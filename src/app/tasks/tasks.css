@@ -161,8 +161,8 @@
   margin: 0.5rem 0;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
   color: white;
 }
 
@@ -180,19 +180,27 @@
   margin: 0.5rem 0;
 }
 
-.taskItem button {
-  padding: 0.5rem;
+/* .taskItem button {
   border: none;
-  border-radius: 8px;
-  background-color: #f9b533;
+  border-radius: 30px;
+  background-color: white;
   color: black;
   font-weight: bold;
   cursor: pointer;
   margin-top: 0.5rem;
   transition: background-color 0.3s ease;
   font-size: 14px;
+} */
+
+.taskItemContainer {
+  flex-shrink: 0; /* Verhindert Schrumpfen in Flex-Layouts */
+  min-width: 48px; /* Optional: Mindestbreite festlegen */
+  margin-left: 6px;
 }
 
+.taskItem button {
+  transition: transform 0.2s ease;
+}
 .taskItem button:hover {
-  background-color: #d78f17;
+  transform: scale(1.1);
 }

@@ -136,16 +136,30 @@ export default function TasksView() {
               if (!task || task.status != "open") return null;
               return (
                 <li key={task.id} className="taskItem">
-                  <h2>{task.title}</h2>
-                  <p>{task.description}</p>
-                  <button
-                    onClick={() => handleUpdateTask(task.id, "completed")}
-                  >
-                    Mark as completed
-                  </button>
-                  <button onClick={() => handleDeleteTask(task.id)}>
-                    Delete
-                  </button>
+                  <div>
+                    <h2>{task.title}</h2>
+                    <p>{task.description}</p>
+                  </div>
+                  <div className="taskItemContainer">
+                    <button
+                      onClick={() => handleUpdateTask(task.id, "completed")}
+                    >
+                      <Image
+                        src="/black-check.png"
+                        width={48}
+                        height={48}
+                        alt="check icon"
+                      />
+                    </button>
+                    <button onClick={() => handleDeleteTask(task.id)}>
+                      <Image
+                        src="/black-cancel.png"
+                        width={48}
+                        height={48}
+                        alt="cancel icon"
+                      />
+                    </button>
+                  </div>
                 </li>
               );
             })
