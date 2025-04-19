@@ -94,10 +94,10 @@ export default function TasksView() {
       <div className="tasksContainer">
         <Image
           className="mb-3"
-          src="/your-tasks-header.png"
-          width={143}
-          height={25}
-          alt="Colorful header"
+          src="/create-new-tasks.png"
+          width={225.75}
+          height={27}
+          alt="Create new tasks header"
         />
         <div className="newTask">
           <input
@@ -123,6 +123,13 @@ export default function TasksView() {
         </div>
       </div>
       <div className="tasksContainer">
+        <Image
+          className="mb-3"
+          src="/your-tasks-header.png"
+          width={143}
+          height={25}
+          alt="Your tasks Header"
+        />
         <ul className="taskList">
           {tasks && tasks.length > 0 ? (
             tasks.map((task) => {
