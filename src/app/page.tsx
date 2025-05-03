@@ -21,21 +21,19 @@ export default function Page() {
 
   return (
     <>
-      <div className="flex flex-col min-h-screen">
+      <main className="flex flex-col min-h-screen">
         {/* Title Section */}
-        <main className="flex-grow">
-          <div className="flex justify-center p-3 gap-2">
-            <Image
-              src="/mario-todo-title.png"
-              width={285}
-              height={49}
-              alt="Title"
-            />
-          </div>
-          {/* Tasks Section */}
-          <TasksView />
-        </main>
-      </div>
+        <div className="flex justify-center mt-3">
+          <Image
+            src="/mario-todo-title.png"
+            width={285}
+            height={49}
+            alt="Title"
+          />
+        </div>
+        {/* Tasks Section */}
+        <TasksView />
+      </main>
     </>
   );
 }

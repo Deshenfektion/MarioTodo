@@ -90,7 +90,7 @@ export default function TasksView() {
   };
 
   return (
-    <main className="flex flex-col gap-5">
+    <main className="flex flex-col justify-center items-center">
       <div className="tasksContainer">
         <ul className="taskList">
           {tasks && tasks.length > 0 ? (
@@ -152,7 +152,7 @@ export default function TasksView() {
               setNewTask({ ...newTask, description: e.target.value })
             }
           />
-          <div className="flex justify-center mt-4">
+          <div className="flex justify-center">
             <button className="modal-action" onClick={handleCreateTask}>
               <div className="modal-action-fade" />
               <div className="modal-action-pattern" />
