@@ -145,7 +145,7 @@ export default function TasksView() {
                       onClick={() => handleUpdateTask(task.id, "completed")}
                     >
                       <Image
-                        src="/black-check.png"
+                        src="/check-icon.svg"
                         width={48}
                         height={48}
                         alt="check icon"
@@ -153,7 +153,7 @@ export default function TasksView() {
                     </button>
                     <button onClick={() => handleDeleteTask(task.id)}>
                       <Image
-                        src="/black-cancel.png"
+                        src="/cancel-icon.svg"
                         width={48}
                         height={48}
                         alt="cancel icon"
