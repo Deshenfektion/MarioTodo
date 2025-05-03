@@ -32,6 +32,7 @@ export default function Page() {
               alt="Title"
             />
           </div>
+          {/* Tasks Section */}
           <TasksView />
         </main>
       </div>

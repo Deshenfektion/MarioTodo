@@ -92,44 +92,6 @@ export default function TasksView() {
   return (
     <main className="flex flex-col gap-5">
       <div className="tasksContainer">
-        <Image
-          className="mb-3"
-          src="/create-new-tasks.png"
-          width={225.75}
-          height={27}
-          alt="Create new tasks header"
-        />
-        <div className="newTask">
-          <input
-            type="text"
-            placeholder="Task Title"
-            value={newTask.title}
-            onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
-          />
-          <textarea
-            placeholder="Task Description"
-            value={newTask.description}
-            onChange={(e) =>
-              setNewTask({ ...newTask, description: e.target.value })
-            }
-          />
-          <div className="flex justify-center mt-4">
-            <button className="modal-action" onClick={handleCreateTask}>
-              <div className="modal-action-fade" />
-              <div className="modal-action-pattern" />
-              <div className="modal-action-text">Create Task</div>
-            </button>{" "}
-          </div>
-        </div>
-      </div>
-      <div className="tasksContainer">
-        <Image
-          className="mb-2"
-          src="/your-tasks-header.png"
-          width={143}
-          height={25}
-          alt="Your tasks Header"
-        />
         <ul className="taskList">
           {tasks && tasks.length > 0 ? (
             tasks.map((task) => {
@@ -167,6 +129,37 @@ export default function TasksView() {
             <p>No tasks available.</p>
           )}
         </ul>
+      </div>
+      <div className="createNewTasksContainer">
+        <Image
+          className="mb-3"
+          src="/create-new-tasks.png"
+          width={225.75}
+          height={27}
+          alt="Create new tasks header"
+        />
+        <div className="newTask">
+          <input
+            type="text"
+            placeholder="Task Title"
+            value={newTask.title}
+            onChange={(e) => setNewTask({ ...newTask, title: e.target.value })}
+          />
+          <textarea
+            placeholder="Task Description"
+            value={newTask.description}
+            onChange={(e) =>
+              setNewTask({ ...newTask, description: e.target.value })
+            }
+          />
+          <div className="flex justify-center mt-4">
+            <button className="modal-action" onClick={handleCreateTask}>
+              <div className="modal-action-fade" />
+              <div className="modal-action-pattern" />
+              <div className="modal-action-text">Create Task</div>
+            </button>{" "}
+          </div>
+        </div>
       </div>
     </main>
   );
