@@ -1,36 +1,32 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# <img src="public/M.png" width="30"> MarioTodo
 
-## Getting Started
+## Motivation
 
-First, run the development server:
+I wanted to break away from the standard, often dull look of todo apps and build something that’s actually fun to use. Inspired by the nostalgic design of Super Mario, I aimed to combine productivity with a playful interface—making completing tasks feel more like winning a level than checking a box.
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+🔗 [Live App](https://todo-list-six-puce.vercel.app/)
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## How To Use
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Currently, GitHub is the only sign-in option.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+1. Log in with your GitHub account.
+2. The rest (hopefully) is self-explanatory!
 
-## Learn More
+**Note**: MarioTodo might look very awful on smaller or very large screens. Currently working on that.
 
-To learn more about Next.js, take a look at the following resources:
+## What I Learned
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+- How visual design and gamification can impact user motivation  
+- Creating playful UI interactions while maintaining accessibility  
+- Structuring a frontend for smooth, responsive animations and transitions  
+- Managing user sessions and data flow for a seamless experience  
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+## Upcoming / missing features:
+- Look good on all display sizes
+- Re-arrange tasks with drag and drop
+- Show completed tasks and be able to put them back to the list 
+- Sound effects and animations for extra feedback  
 
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Copyright
+This project is a fan creation and is not affiliated with Nintendo in any way. All designs and content based on Nintendo properties are created for fan purposes only and are not commercial. Note: The design is inspired by Nintendo games and is a tribute to the franchise. No claims to copyrighted content are made.
