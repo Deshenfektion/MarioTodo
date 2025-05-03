@@ -100,7 +100,7 @@ export default function TasksView() {
                 <li key={task.id} className="taskItem">
                   <div>
                     <h2>{task.title}</h2>
-                    <p>{task.description}</p>
+                    <p className="taskDescription">{task.description}</p>
                   </div>
                   <div className="taskItemContainer">
                     <button
@@ -126,7 +126,7 @@ export default function TasksView() {
               );
             })
           ) : (
-            <p>No tasks available.</p>
+            <p></p>
           )}
         </ul>
       </div>

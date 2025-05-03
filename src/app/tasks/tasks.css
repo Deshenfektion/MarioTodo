@@ -173,7 +173,7 @@
   margin: 0.5rem 0;
   padding: 1rem;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
   align-items: center;
   color: black;
@@ -189,9 +189,11 @@
   display: inline-block;
 }
 
-.taskItem p {
+.taskDescription {
   font-size: 14px;
-  margin: 0.5rem 0;
+  margin: 0.5rem 1rem;
+  color: #6f6a6a;
+  font-style: italic;
 }
 
 .taskItemContainer {
