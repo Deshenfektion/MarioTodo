@@ -2,7 +2,7 @@
 
 ## Motivation
 
-I wanted to break away from the standard, often dull look of todo apps and build something that’s actually fun to use. Inspired by the nostalgic design of Super Mario, I aimed to combine productivity with a playful interface—making completing tasks feel more like winning a level than checking a box.
+I wanted to break away from the standard, often dull look of todo apps and wanted to build something that’s actually fun to use and look at!
 
 🔗 [Live App](https://todo-list-six-puce.vercel.app/)
 
