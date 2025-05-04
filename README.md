@@ -4,8 +4,6 @@
 
 I wanted to break away from the standard, often dull look of todo apps and wanted to build something that’s actually fun to use and look at!
 
-🔗 [Live App](https://todo-list-six-puce.vercel.app/)
-
 ## How To Use
 
 Currently, GitHub is the only sign-in option.
@@ -14,6 +12,8 @@ Currently, GitHub is the only sign-in option.
 2. The rest (hopefully) is self-explanatory!
 
 **Note**: MarioTodo might look very awful on smaller or very large screens. Currently working on that.
+
+🔗 [Live App](https://todo-list-six-puce.vercel.app/)
 
 ## What I Learned
 
