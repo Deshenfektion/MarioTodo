@@ -15,6 +15,21 @@ Currently, GitHub is the only sign-in option.
 
 🔗 [Live App](https://todo-list-six-puce.vercel.app/)
 
+## Tech Stack
+
+### Frontend
+*   **Framework:** Next.js
+*   **Language:** TypeScript
+*   **Styling:**
+    *   Tailwind CSS
+    *   Custom CSS
+
+### Backend & Database
+*   **Backend-as-a-Service (BaaS):** Supabase
+
+### Deployment & Hosting
+*   **Platform:** Vercel
+
 ## What I Learned
 
 - How visual design and gamification can impact user motivation  
