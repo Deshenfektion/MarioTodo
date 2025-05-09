@@ -15,15 +15,13 @@ export async function createTask(
         status: "open",
       },
     ])
-    .select("*") // Verwende .select("*"), um das neu erstellte Objekt zurückzubekommen
-    .single(); // Falls du nur ein Element erwartest
+    .select("*")
+    .single();
 
   if (error) {
-    console.error("Error inserting task:", error); // Genauere Fehlerbehandlung
     throw new Error(error.message);
   }
 
-  console.log("Task created:", data); // Debugging: Ausgabe des erstellten Tasks
   return data;
 }
 
@@ -57,7 +55,7 @@ export async function getTasks(userId: string) {
     .from("tasks")
     .select("*")
     .eq("user_id", userId)
-    .order("created_at", { ascending: false }); // Optional: nach Erstellungsdatum sortieren
+    .order("created_at", { ascending: false });
 
   if (error) {
     throw new Error(error.message);

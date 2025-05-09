@@ -20,20 +20,20 @@
 }
 
 body {
-  background: var(--background); /* Dein Hintergrund für den Body */
+  background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
   z-index: 1;
-  position: relative; /* Position relativ setzen, damit MarioBackground auf z-index angewendet werden kann */
+  position: relative;
 }
 
 #MarioBackground {
-  position: absolute; /* MarioBackground wird von body losgelöst */
+  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  z-index: -1; /* Auf die unterste Schicht legen, damit es hinter allem anderen bleibt */
+  z-index: -1;
 }
 
 .children {

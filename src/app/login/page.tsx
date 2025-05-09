@@ -1,10 +1,9 @@
 "use client";
 
 import { useEffect } from "react";
-import { supabase } from "../lib/supabaseClient"; // Dein Supabase-Client
+import { supabase } from "../lib/supabaseClient";
 
 export default function LoginPage() {
-  // GitHub Login-Funktion
   const handleGithubLogin = async () => {
     const { error } = await supabase.auth.signInWithOAuth({
       provider: "github",
@@ -16,14 +15,13 @@ export default function LoginPage() {
   };
 
   useEffect(() => {
-    // Optional: Weiterleiten, wenn der Benutzer bereits eingeloggt ist
     const checkUser = async () => {
       const {
         data: { user },
       } = await supabase.auth.getUser();
 
       if (user) {
-        window.location.href = "/"; // Weiterleiten zur Hauptseite, wenn der Benutzer eingeloggt ist
+        window.location.href = "/";
       }
     };
 

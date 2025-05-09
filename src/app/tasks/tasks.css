@@ -1,8 +1,8 @@
 /* Animated 'Create Task' button styles */
 .modal-action {
   background-color: white;
-  width: 97.5%; /* Füllt den verfügbaren Platz der Parent-Komponente */
-  max-width: 100%; /* Verhindert Überlauf */
+  width: 97.5%;
+  max-width: 100%;
   padding: 0.85rem;
   position: relative;
   font-size: 1rem;
@@ -13,8 +13,8 @@
   outline-offset: 0.2rem;
   overflow: hidden;
   cursor: none;
-  display: inline-block; /* Für natürliche Button-Breite */
-  box-sizing: border-box; /* Padding in Breite einberechnen */
+  display: inline-block;
+  box-sizing: border-box;
 }
 
 .modal-action:is(:hover, :focus-visible) {
@@ -198,14 +198,15 @@
 }
 
 .taskItemContainer {
-  flex-shrink: 0; /* Verhindert Schrumpfen in Flex-Layouts */
-  min-width: 48px; /* Optional: Mindestbreite festlegen */
+  flex-shrink: 0;
+  min-width: 48px;
   margin-left: 6px;
 }
 
 .taskItem button {
   transition: transform 0.2s ease;
 }
+
 .taskItem button:hover {
   transform: scale(1.1);
 }

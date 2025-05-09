@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
-import { getTasks, createTask, updateTask, deleteTask } from "../lib/tasks"; // Importiere alle Funktionen
+import { getTasks, createTask, updateTask, deleteTask } from "../lib/tasks";
 import "./tasks.css";
 import Image from "next/image";
 
@@ -17,22 +17,20 @@ export default function TasksView() {
       setUser(user);
 
       if (user) {
-        loadTasks(user.id); // Lade Aufgaben, wenn der User existiert
+        loadTasks(user.id);
       } else {
-        window.location.href = "/login"; // Weiterleitung zur Login-Seite
+        window.location.href = "/login";
       }
     };
 
     loadUser();
   }, []);
 
-  // Sicherstellen, dass tasks nie null oder undefined ist
   const loadTasks = async (userId: string) => {
     const tasks = await getTasks(userId);
-    setTasks(tasks || []); // Falls tasks null ist, setze ein leeres Array
+    setTasks(tasks || []);
   };
 
-  // Neue Aufgabe erstellen
   const handleCreateTask = async () => {
     if (user && newTask.title) {
       try {
@@ -42,11 +40,9 @@ export default function TasksView() {
           newTask.description
         );
 
-        console.log("New task created:", newTaskData); // Debugging: Zeige die Rückgabe von createTask an
-
         if (newTaskData) {
-          setTasks([newTaskData, ...tasks]); // Füge die neue Aufgabe an den Anfang der Liste hinzu
-          setNewTask({ title: "", description: "" }); // Setze die Eingabefelder zurück
+          setTasks([newTaskData, ...tasks]);
+          setNewTask({ title: "", description: "" });
         } else {
           console.error("No task data returned from createTask");
           alert("Failed to create task. Please try again.");
@@ -61,11 +57,10 @@ export default function TasksView() {
     }
   };
 
-  // Aufgabe aktualisieren
   const handleUpdateTask = async (taskId: number, status: string) => {
     if (user) {
       try {
-        const updatedTask = await updateTask(taskId, status); // Nur den Status aktualisieren
+        const updatedTask = await updateTask(taskId, status);
         setTasks(
           tasks.map((task) => (task.id === taskId ? updatedTask : task))
         );
@@ -76,7 +71,6 @@ export default function TasksView() {
     }
   };
 
-  // Aufgabe löschen
   const handleDeleteTask = async (taskId: number) => {
     if (user) {
       try {
@@ -157,7 +151,7 @@ export default function TasksView() {
               <div className="modal-action-fade" />
               <div className="modal-action-pattern" />
               <div className="modal-action-text">Create Task</div>
-            </button>{" "}
+            </button>
           </div>
         </div>
       </div>

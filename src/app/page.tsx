@@ -2,7 +2,7 @@
 
 import { useEffect } from "react";
 import Image from "next/image";
-import { supabase } from "./lib/supabaseClient"; // Dein Supabase-Client
+import { supabase } from "./lib/supabaseClient";
 import TasksView from "./tasks/TasksView";
 
 export default function Page() {
@@ -12,7 +12,7 @@ export default function Page() {
         data: { user },
       } = await supabase.auth.getUser();
       if (!user) {
-        window.location.href = "/login"; // Weiterleitung zur Login-Seite, wenn der Benutzer nicht eingeloggt ist
+        window.location.href = "/login";
       }
     };
 
@@ -22,7 +22,6 @@ export default function Page() {
   return (
     <>
       <main className="flex flex-col min-h-screen">
-        {/* Title Section */}
         <div className="flex justify-center mt-3">
           <Image
             src="/mario-todo-title.png"
@@ -31,7 +30,6 @@ export default function Page() {
             alt="Title"
           />
         </div>
-        {/* Tasks Section */}
         <TasksView />
       </main>
     </>
