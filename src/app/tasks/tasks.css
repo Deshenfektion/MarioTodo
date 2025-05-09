@@ -96,13 +96,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  min-width: 70%;
+  min-width: 50%;
   padding: 1rem 1rem 1rem 1rem;
   background-color: #222;
   border-radius: 10px;
   max-height: 60vh;
   position: relative;
   overflow: hidden;
+  margin-bottom: 4rem;
 }
 
 .tasksContainer {
@@ -113,7 +114,7 @@
   max-width: 800px;
   padding: 1rem;
   border-radius: 10px;
-  min-height: 62vh;
+  min-height: 50vh;
   max-height: 90vh;
 }
 
