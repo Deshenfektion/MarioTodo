@@ -1,41 +1,19 @@
 # <img src="public/M.png" width="30"> MarioTodo
 
-## Motivation
+## What I Learned
 
-I wanted to break away from the standard, often dull look of todo apps and wanted to build something that’s actually fun to use and look at!
+- Nintendo will sue anyone older than 2 years old using their IP.
 
 ## How To Use
 
 Currently, GitHub is the only sign-in option.
 
 1. Log in with your GitHub account.
-2. The rest (hopefully) is self-explanatory!
+2. The rest (hopefully) is self-explanatory.
 
 **Note**: MarioTodo might look very awful on smaller or very large screens. Currently working on that.
 
 🔗 [Live App](https://todo-list-six-puce.vercel.app/)
-
-## Tech Stack
-
-### Frontend
-*   **Framework:** Next.js
-*   **Language:** TypeScript
-*   **Styling:**
-    *   Tailwind CSS
-    *   Custom CSS
-
-### Backend & Database
-*   **Backend-as-a-Service (BaaS):** Supabase
-
-### Deployment & Hosting
-*   **Platform:** Vercel
-
-## What I Learned
-
-- How visual design and gamification can impact user motivation  
-- Creating playful UI interactions while maintaining accessibility  
-- Structuring a frontend for smooth, responsive animations and transitions  
-- Managing user sessions and data flow for a seamless experience  
 
 ## Upcoming / missing features:
 - Look good on all display sizes
